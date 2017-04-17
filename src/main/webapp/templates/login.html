@@ -1,0 +1,182 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title th:inline="text" >Social Network!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+
+    <style >
+        body {
+            padding-top: 50px;
+        }
+        .unpost{
+            margin : 20px auto;
+        }
+        .container {
+            width: 100%;
+            padding: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+
+        .footer-basic-centered{
+            background-color: #292c2f;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+            box-sizing: border-box;
+            width: 100%;
+            text-align: center;
+            font: normal 18px sans-serif;
+
+            padding: 25px;
+            margin-top: 130px;
+        }
+
+        .footer-basic-centered .footer-company-motto{
+            color:  #8d9093;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .footer-basic-centered .footer-company-name{
+            color:  #8f9296;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .footer-basic-centered .footer-links{
+            list-style: none;
+            font-weight: bold;
+            color:  #ffffff;
+            padding: 35px 0 23px;
+            margin: 0;
+        }
+
+        .footer-basic-centered .footer-links a{
+            display:inline-block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* If you don't want the footer to be responsive, remove these media queries */
+
+        @media (max-width: 400px) {
+
+            .footer-basic-centered{
+                padding: 0px;
+            }
+
+            .footer-basic-centered .footer-company-motto{
+                font-size: 18px;
+            }
+
+            .footer-basic-centered .footer-company-name{
+                font-size: 12px;
+            }
+
+            .footer-basic-centered .footer-links{
+                font-size: 14px;
+                padding: 25px 0 20px;
+            }
+
+            .footer-basic-centered .footer-links a{
+                line-height: 1.8;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">PolyProjet</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="container">
+
+                <h1>Connexion</h1>
+
+                <!-- Formulaire -->
+                <form method="post" th:action="@{/login}"  >
+                    <div class="form-group">
+                        <label for="username">Identifiant: </label>
+                        <input type="text" size="20" class="form-control" name="username" id="username" aria-describedby="helpId"
+                               placeholder="Nom d'utilisateur" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe: </label>
+                        <input type="password" size="20" class="form-control" name="password" id="password" aria-describedby="helpId"
+                               placeholder="Mot de passe" />
+                    </div>
+                    <button type="submit" class="btn btn-primary|secondary|success|info|warning|danger">Se connecter!</button>
+                </form><br/>
+                <a href="/new_account">Créer un compte</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
+<footer class="footer-basic-centered">
+
+    <p class="footer-company-motto">Vincent Demilly - Projet Polytech</p>
+
+    <p class="footer-links">
+        <a href="#">Home</a>
+        ·
+        <a href="#">Blog</a>
+        ·
+        <a href="#">Pricing</a>
+        ·
+        <a href="#">About</a>
+        ·
+        <a href="#">Faq</a>
+        ·
+        <a href="#">Contact</a>
+    </p>
+
+    <p class="footer-company-name">PolyProjet &copy; 2017</p>
+
+</footer>
+</body>
+</html>
